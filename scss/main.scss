@@ -97,7 +97,7 @@ body {
   width: 100%;
   font-family: $font-family-primary;
   -webkit-font-smoothing: antialiased;
-  background-color: #f4f5f9;
+  background-color: $white-color;
 }
 
 ul {
@@ -187,7 +187,7 @@ img {
   }
 
   .logo {
-    font-family: $font-family-secondary;
+    font-family: $font-family-primary;
     font-size: $font-size-xl;
     font-weight: $font-weight-bold;
     letter-spacing: 0.15em;
@@ -344,7 +344,7 @@ img {
     }
 
     .hero-title {
-      font-family: $font-family-secondary;
+      font-family: $font-family-primary;
       font-size: $font-size-4xl;
       font-weight: $font-weight-bold;
       line-height: 1.1;
@@ -415,7 +415,7 @@ img {
   margin-bottom: $space-8;
 
   .section-title {
-    font-family: $font-family-secondary;
+    font-family: $font-family-primary;
     font-size: $font-size-2xl;
     font-weight: $font-weight-bold;
     color: $black-color;
@@ -506,38 +506,24 @@ img {
    PRODUCT CARD
 ========================= */
 .product-card {
-  background-color: $bg-card-color;
-  border-radius: $radius-lg;
-  overflow: hidden;
+  @include grid-center;
   @include transition;
 
-  &:hover {
-    box-shadow: $shadow-lg;
-    transform: translateY(-4px);
-
-    .product-image img {
-      transform: scale(1.05);
-    }
-  }
-
   .product-image {
-    aspect-ratio: 3/4;
-    overflow: hidden;
-    background-color: $bg-muted;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      @include transition(transform, 0.5s);
-    }
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: $transition;
   }
 
   .product-info {
     padding: $space-4;
+    text-align: left;
+    width: 100%;
+    margin-left: 1.75rem;
 
     .product-name {
-      font-size: $font-size-sm;
+      font-size: $font-size-xl;
       font-weight: $font-weight-semibold;
       color: $black-color;
       margin-bottom: $space-2;
@@ -628,7 +614,7 @@ img {
     }
 
     .banner-title {
-      font-family: $font-family-secondary;
+      font-family: $font-family-primary;
       font-size: $font-size-3xl;
       font-weight: $font-weight-bold;
       color: $black-color;
@@ -733,15 +719,31 @@ img {
    JACKET COLLECTION
 ========================= */
 .jacket-collection {
-  background-color: $primary-color;
-  padding: $space-12 $space-6;
+  &__bg-color {
+    background-color: $primary-color;
+    width: 100%;
 
-  @include responsive(lg) {
-    padding: $space-16 $space-12;
+    height: 320px;
+    margin-bottom: -18rem;
+
+    @include responsive(md) {
+      height: 420px;
+      margin-bottom: -25rem;
+    }
+
+    @include responsive(lg) {
+      height: 626px;
+      margin-bottom: -37rem;
+    }
   }
 
   .container {
     @include container(1400px);
+    padding: $space-12 $space-6;
+
+    @include responsive(lg) {
+      padding: $space-16 $space-12;
+    }
   }
 
   .collection-header {
@@ -749,26 +751,32 @@ img {
     margin-bottom: $space-10;
 
     .collection-subtitle {
-      font-size: $font-size-sm;
+      font-size: $font-size-xl;
       font-weight: $font-weight-semibold;
-      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: $black-color;
       margin-bottom: $space-2;
-    }
-
-    .collection-title {
-      font-family: $font-family-secondary;
-      font-size: $font-size-3xl;
-      font-weight: $font-weight-bold;
-      color: $black-color;
-
       @include responsive(md) {
-        font-size: $font-size-4xl;
+        font-size: $font-size-2xl;
       }
 
       @include responsive(lg) {
+        font-size: $font-size-3xl;
+      }
+    }
+
+    .collection-title {
+      font-family: $font-family-primary;
+      font-size: $font-size-4xl;
+      font-weight: $font-weight-semibold;
+      color: $black-color;
+
+      @include responsive(md) {
         font-size: $font-size-5xl;
+      }
+
+      @include responsive(lg) {
+        font-size: $font-size-6xl;
       }
     }
   }
@@ -789,7 +797,7 @@ img {
     }
 
     .product-card {
-      background-color: $white-color;
+      background-color: transparent;
     }
   }
 
@@ -821,13 +829,14 @@ img {
    FOOTER
 ========================= */
 .footer {
-  font-family: "ClashDisplay-Semibold";
   background-color: $white-color;
-  border-top: 1px solid $border-color;
+  border-top: 2px solid $black-color;
   padding: $space-12 $space-6;
+  font-family: $font-family-primary;
 
   @include responsive(lg) {
-    padding: $space-16 $space-12;
+    padding: $space-12;
+    padding-top: $space-16;
   }
 
   .container {
@@ -847,24 +856,26 @@ img {
 
   .footer-newsletter {
     .newsletter-title {
-      font-family: $font-family-secondary;
-      font-size: $font-size-xl;
-      font-weight: $font-weight-bold;
+      font-family: $font-family-primary;
+      font-size: $font-size-3xl;
+      font-weight: $font-weight-semibold;
       color: $black-color;
       margin-bottom: $space-4;
       line-height: 1.3;
     }
 
     .newsletter-form {
+      width: 80%;
       display: flex;
       gap: $space-2;
+      border: 1px solid $black-color;
+      border-radius: $radius-full;
 
       input {
         flex: 1;
         padding: $space-3 $space-4;
-        border: 1px solid $border-color;
-        border-radius: $radius-md;
         font-size: $font-size-sm;
+        border: none;
         outline: none;
         @include transition;
 
@@ -873,15 +884,16 @@ img {
         }
 
         &::placeholder {
-          color: #999;
+          text-transform: uppercase;
+          font-size: 13px;
         }
       }
 
       button {
         padding: $space-3 $space-5;
         background-color: $primary-color;
-        border-radius: $radius-md;
-        font-size: $font-size-sm;
+        border-radius: $radius-full;
+        font-size: 13px;
         font-weight: $font-weight-semibold;
         color: $black-color;
         @include transition;
@@ -891,38 +903,14 @@ img {
         }
       }
     }
-
-    .social-links {
-      @include flex-center;
-      gap: $space-4;
-      margin-top: $space-6;
-
-      a {
-        @include size(40px);
-        @include flex-center;
-        justify-content: center;
-        border-radius: $radius-md;
-        background-color: $bg-muted;
-        @include transition;
-
-        &:hover {
-          background-color: $primary-color;
-        }
-
-        svg {
-          @include size(18px);
-        }
-      }
-    }
   }
 
   .footer-links {
     .footer-title {
-      font-size: $font-size-xs;
+      font-size: $font-size-sm;
       font-weight: $font-weight-semibold;
-      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #666;
+      color: $black-color;
       margin-bottom: $space-4;
     }
 
@@ -944,12 +932,39 @@ img {
 
   .footer-bottom {
     padding-top: $space-6;
-    // border-top: 1px solid $border-color;
     text-align: center;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1.3fr 3fr;
+
+    .social-links {
+      @include flex-center;
+      gap: $space-2;
+
+      a {
+        @include size(40px);
+        @include flex-center;
+        justify-content: center;
+        border-radius: $radius-md;
+        background-color: transparent;
+        @include transition;
+        color: rgba($black-color, 0.7);
+
+        &:hover {
+          background-color: $primary-color;
+        }
+
+        svg {
+          @include size(25px);
+        }
+      }
+    }
 
     p {
-      font-size: $font-size-sm;
-      color: #666;
+      text-align: left;
+      font-size: $font-size-base;
+      color: $black-color;
+      font-weight: $font-weight-semibold;
     }
   }
 }

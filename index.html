@@ -1,432 +1,543 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UNIFORM - Professional Medical Scrubs & Uniforms</title>
-  <meta name="description" content="Shop professional medical scrubs and uniforms. Look professional, feel exceptional.">
-  
-  <!-- Compiled CSS -->
-  <link rel="stylesheet" href="css/main.css">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>U</text></svg>">
-</head>
-<body>
-  <!-- Top Banner -->
-  <div class="top-banner">
-    New Collection Released Now
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNIFORM - Professional Medical Scrubs & Uniforms</title>
+    <meta
+      name="description"
+      content="Shop professional medical scrubs and uniforms. Look professional, feel exceptional."
+    />
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-container">
-      <div class="nav-left">
-        <button class="menu-btn" aria-label="Open menu" id="menuBtn">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="#products">All Products</a></li>
-          <li><a href="#categories">By Category</a></li>
-        </ul>
+    <!-- Compiled CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>U</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- Top Banner -->
+    <div class="top-banner">New Collection Released Now</div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="nav-left">
+          <button class="menu-btn" aria-label="Open menu" id="menuBtn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#products">All Products</a></li>
+            <li><a href="#categories">By Category</a></li>
+          </ul>
+        </div>
+
+        <a href="#" class="logo">UNIFORM</a>
+
+        <div class="nav-right">
+          <a href="#quote" class="btn-quote">Get a Quote</a>
+          <button class="search-btn" aria-label="Search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
-      
-      <a href="#" class="logo">UNIFORM</a>
-      
-      <div class="nav-right">
-        <a href="#quote" class="btn-quote">Get a Quote</a>
-        <button class="search-btn" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </button>
-      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="close-btn" aria-label="Close menu" id="closeMenuBtn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+      <ul class="mobile-nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#products">All Products</a></li>
+        <li><a href="#categories">By Category</a></li>
+        <li><a href="#quote">Get a Quote</a></li>
+      </ul>
     </div>
-  </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <button class="close-btn" aria-label="Close menu" id="closeMenuBtn">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
-    <ul class="mobile-nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#shop">Shop</a></li>
-      <li><a href="#products">All Products</a></li>
-      <li><a href="#categories">By Category</a></li>
-      <li><a href="#quote">Get a Quote</a></li>
-    </ul>
-  </div>
-  <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <div class="hero-content">
+          <p class="hero-tagline">
+            Providing uniforms engineered for ease of movement and
+            breathability.
+          </p>
+          <h1 class="hero-title">
+            Look<br />Professional<br /><span class="highlight"
+              >Feel Exceptional</span
+            >
+          </h1>
+        </div>
+        <div class="hero-image">
+          <img
+            src="assets/images/hero-model.jpg"
+            alt="Professional medical scrubs model"
+          />
+        </div>
+      </div>
+    </section>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-container">
-      <div class="hero-content">
-        <p class="hero-tagline">Providing uniforms engineered for ease of movement and breathability.</p>
-        <h1 class="hero-title">
-          Look<br>Professional<br><span class="highlight">Feel Exceptional</span>
-        </h1>
-      </div>
-      <div class="hero-image">
-        <img src="assets/images/hero-model.jpg" alt="Professional medical scrubs model">
-      </div>
-    </div>
-  </section>
+    <!-- Latest Collections -->
+    <section class="latest-collections" id="shop">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Latest Collections</h2>
+          <div class="section-tabs">
+            <button class="tab-btn active" data-tab="new">New</button>
+            <button class="tab-btn" data-tab="women">Women</button>
+            <button class="tab-btn" data-tab="accessories">Accessories</button>
+          </div>
+          <a href="#" class="show-more">
+            Show More
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </a>
+        </div>
 
-  <!-- Latest Collections -->
-  <section class="latest-collections" id="shop">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Latest Collections</h2>
-        <div class="section-tabs">
-          <button class="tab-btn active" data-tab="new">New</button>
-          <button class="tab-btn" data-tab="women">Women</button>
-          <button class="tab-btn" data-tab="accessories">Accessories</button>
-        </div>
-        <a href="#" class="show-more">
-          Show More
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      </div>
-      
-      <div class="products-grid" id="latestProducts">
-        <!-- Product 1 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="assets/images/product-1.jpg" alt="Uniform 035648">
+        <div class="products-grid" id="latestProducts">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="assets/images/product-1.jpg" alt="Uniform 035648" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Uniform 035648</h3>
+              <p class="product-colors">
+                Available Colors
+                <span class="color-dots">
+                  <span class="dot black"></span>
+                  <span class="dot gray"></span>
+                  <span class="dot white"></span>
+                </span>
+              </p>
+              <p class="product-price">$ 34.00</p>
+            </div>
           </div>
-          <div class="product-info">
-            <h3 class="product-name">Uniform 035648</h3>
-            <p class="product-colors">
-              Available Colors
-              <span class="color-dots">
-                <span class="dot black"></span>
-                <span class="dot gray"></span>
-                <span class="dot white"></span>
-              </span>
-            </p>
-            <p class="product-price">$ 34.00</p>
-          </div>
-        </div>
-        
-        <!-- Product 2 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="assets/images/product-2.jpg" alt="Uniform 035648">
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Uniform 035648</h3>
-            <p class="product-colors">
-              Available Colors
-              <span class="color-dots">
-                <span class="dot black"></span>
-                <span class="dot gray"></span>
-                <span class="dot white"></span>
-              </span>
-            </p>
-            <p class="product-price">$ 34.00</p>
-          </div>
-        </div>
-        
-        <!-- Product 3 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="assets/images/product-3.jpg" alt="Uniform 035648">
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Uniform 035648</h3>
-            <p class="product-colors">
-              Available Colors
-              <span class="color-dots">
-                <span class="dot black"></span>
-                <span class="dot gray"></span>
-                <span class="dot white"></span>
-              </span>
-            </p>
-            <p class="product-price">$ 34.00</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Promo Banner -->
-  <section class="promo-banner">
-    <div class="banner-container">
-      <div class="banner-image">
-        <img src="assets/images/banner-model.jpg" alt="Stylish professional scrubs">
-      </div>
-      <div class="banner-content">
-        <h2 class="banner-title">Stylish &<br>Professional</h2>
-        <a href="#" class="banner-link">
-          Shop Now
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
+          <!-- Product 2 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="assets/images/product-2.jpg" alt="Uniform 035648" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Uniform 035648</h3>
+              <p class="product-colors">
+                Available Colors
+                <span class="color-dots">
+                  <span class="dot black"></span>
+                  <span class="dot gray"></span>
+                  <span class="dot white"></span>
+                </span>
+              </p>
+              <p class="product-price">$ 34.00</p>
+            </div>
+          </div>
 
-  <!-- Featured Products -->
-  <section class="featured-products" id="products">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Featured Products</h2>
-      </div>
-      
-      <div class="category-tabs">
-        <button class="category-btn">Lab Coats</button>
-        <button class="category-btn">Scrub Sets</button>
-        <button class="category-btn">Scrub Tops</button>
-        <button class="category-btn active">Printed Tops</button>
-        <button class="category-btn">Scrub Pants</button>
-        <button class="category-btn">Jackets/Tees</button>
-        <button class="category-btn">Plus</button>
-      </div>
-      
-      <div class="products-grid">
-        <!-- Product 1 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="assets/images/featured-1.jpg" alt="Uniform 035648">
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Uniform 035648</h3>
-            <p class="product-colors">
-              Available Colors
-              <span class="color-dots">
-                <span class="dot black"></span>
-                <span class="dot gray"></span>
-                <span class="dot white"></span>
-              </span>
-            </p>
-            <p class="product-price">$ 34.00</p>
-          </div>
-        </div>
-        
-        <!-- Product 2 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="assets/images/featured-2.jpg" alt="Uniform 035648">
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Uniform 035648</h3>
-            <p class="product-colors">
-              Available Colors
-              <span class="color-dots">
-                <span class="dot black"></span>
-                <span class="dot gray"></span>
-                <span class="dot white"></span>
-              </span>
-            </p>
-            <p class="product-price">$ 34.00</p>
-          </div>
-        </div>
-        
-        <!-- Product 3 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="assets/images/featured-3.jpg" alt="Uniform 035648">
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Uniform 035648</h3>
-            <p class="product-colors">
-              Available Colors
-              <span class="color-dots">
-                <span class="dot black"></span>
-                <span class="dot gray"></span>
-                <span class="dot white"></span>
-              </span>
-            </p>
-            <p class="product-price">$ 34.00</p>
-          </div>
-        </div>
-        
-        <!-- Product 4 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="assets/images/featured-4.jpg" alt="Uniform 035648">
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Uniform 035648</h3>
-            <p class="product-colors">
-              Available Colors
-              <span class="color-dots">
-                <span class="dot black"></span>
-                <span class="dot gray"></span>
-                <span class="dot white"></span>
-              </span>
-            </p>
-            <p class="product-price">$ 34.00</p>
-          </div>
-        </div>
-        
-        <!-- Product 5 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="assets/images/featured-5.jpg" alt="Uniform 035648">
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Uniform 035648</h3>
-            <p class="product-colors">
-              Available Colors
-              <span class="color-dots">
-                <span class="dot black"></span>
-                <span class="dot gray"></span>
-                <span class="dot white"></span>
-              </span>
-            </p>
-            <p class="product-price">$ 34.00</p>
-          </div>
-        </div>
-        
-        <!-- Product 6 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="assets/images/featured-6.jpg" alt="Uniform 035648">
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Uniform 035648</h3>
-            <p class="product-colors">
-              Available Colors
-              <span class="color-dots">
-                <span class="dot black"></span>
-                <span class="dot gray"></span>
-                <span class="dot white"></span>
-              </span>
-            </p>
-            <p class="product-price">$ 34.00</p>
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="assets/images/product-3.jpg" alt="Uniform 035648" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Uniform 035648</h3>
+              <p class="product-colors">
+                Available Colors
+                <span class="color-dots">
+                  <span class="dot black"></span>
+                  <span class="dot gray"></span>
+                  <span class="dot white"></span>
+                </span>
+              </p>
+              <p class="product-price">$ 34.00</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Jacket Collection -->
-  <section class="jacket-collection" id="categories">
-    <div class="container">
-      <div class="collection-header">
-        <p class="collection-subtitle">Our Jacket Collection</p>
-        <h2 class="collection-title">Comfort &<br>Performance</h2>
-      </div>
-      
-      <div class="products-grid">
-        <!-- Jacket 1 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="assets/images/jacket-1.jpg" alt="Uniform 035648">
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Uniform 035648</h3>
-            <p class="product-price">$ 34.00</p>
-          </div>
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+      <div class="banner-container">
+        <div class="banner-image">
+          <img
+            src="assets/images/banner-model.jpg"
+            alt="Stylish professional scrubs"
+          />
         </div>
-        
-        <!-- Jacket 2 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="assets/images/jacket-2.jpg" alt="Uniform 035648">
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Uniform 035648</h3>
-            <p class="product-price">$ 34.00</p>
-          </div>
-        </div>
-        
-        <!-- Jacket 3 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="assets/images/jacket-3.jpg" alt="Uniform 035648">
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Uniform 035648</h3>
-            <p class="product-price">$ 34.00</p>
-          </div>
+        <div class="banner-content">
+          <h2 class="banner-title">Stylish &<br />Professional</h2>
+          <a href="#" class="banner-link">
+            Shop Now
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </a>
         </div>
       </div>
-      
-      <div class="collection-cta">
-        <a href="#" class="btn-shop">Shop Now</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-newsletter">
-          <h3 class="newsletter-title">For Unlimited Offers,<br>Subscribe It.</h3>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit">Submit</button>
-          </form>
+    <!-- Featured Products -->
+    <section class="featured-products" id="products">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Products</h2>
+        </div>
+
+        <div class="category-tabs">
+          <button class="category-btn">Lab Coats</button>
+          <button class="category-btn">Scrub Sets</button>
+          <button class="category-btn">Scrub Tops</button>
+          <button class="category-btn active">Printed Tops</button>
+          <button class="category-btn">Scrub Pants</button>
+          <button class="category-btn">Jackets/Tees</button>
+          <button class="category-btn">Plus</button>
+        </div>
+
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="assets/images/featured-1.jpg" alt="Uniform 035648" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Uniform 035648</h3>
+              <p class="product-colors">
+                Available Colors
+                <span class="color-dots">
+                  <span class="dot black"></span>
+                  <span class="dot gray"></span>
+                  <span class="dot white"></span>
+                </span>
+              </p>
+              <p class="product-price">$ 34.00</p>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="assets/images/featured-2.jpg" alt="Uniform 035648" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Uniform 035648</h3>
+              <p class="product-colors">
+                Available Colors
+                <span class="color-dots">
+                  <span class="dot black"></span>
+                  <span class="dot gray"></span>
+                  <span class="dot white"></span>
+                </span>
+              </p>
+              <p class="product-price">$ 34.00</p>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="assets/images/featured-3.jpg" alt="Uniform 035648" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Uniform 035648</h3>
+              <p class="product-colors">
+                Available Colors
+                <span class="color-dots">
+                  <span class="dot black"></span>
+                  <span class="dot gray"></span>
+                  <span class="dot white"></span>
+                </span>
+              </p>
+              <p class="product-price">$ 34.00</p>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="assets/images/featured-4.jpg" alt="Uniform 035648" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Uniform 035648</h3>
+              <p class="product-colors">
+                Available Colors
+                <span class="color-dots">
+                  <span class="dot black"></span>
+                  <span class="dot gray"></span>
+                  <span class="dot white"></span>
+                </span>
+              </p>
+              <p class="product-price">$ 34.00</p>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="assets/images/featured-5.jpg" alt="Uniform 035648" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Uniform 035648</h3>
+              <p class="product-colors">
+                Available Colors
+                <span class="color-dots">
+                  <span class="dot black"></span>
+                  <span class="dot gray"></span>
+                  <span class="dot white"></span>
+                </span>
+              </p>
+              <p class="product-price">$ 34.00</p>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="assets/images/featured-6.jpg" alt="Uniform 035648" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Uniform 035648</h3>
+              <p class="product-colors">
+                Available Colors
+                <span class="color-dots">
+                  <span class="dot black"></span>
+                  <span class="dot gray"></span>
+                  <span class="dot white"></span>
+                </span>
+              </p>
+              <p class="product-price">$ 34.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jacket Collection -->
+    <section class="jacket-collection" id="categories">
+      <div class="jacket-collection__bg-color"></div>
+      <div class="container">
+        <div class="collection-header">
+          <p class="collection-subtitle">Our Jacket Collection</p>
+          <h2 class="collection-title">Comfort &<br />Performance</h2>
+        </div>
+
+        <div class="products-grid">
+          <!-- Jacket 1 -->
+          <div class="product-card">
+            <img
+              src="assets/images/jacket.png"
+              alt="Uniform 035648"
+              class="product-image"
+            />
+            <div class="product-info">
+              <h3 class="product-name">Uniform 035648</h3>
+              <p class="product-price">$ 34.00</p>
+            </div>
+          </div>
+
+          <!-- Jacket 2 -->
+          <div class="product-card">
+            <img
+              src="assets/images/jacket.png"
+              alt="Uniform 035648"
+              class="product-image"
+            />
+            <div class="product-info">
+              <h3 class="product-name">Uniform 035648</h3>
+              <p class="product-price">$ 34.00</p>
+            </div>
+          </div>
+
+          <!-- Jacket 3 -->
+          <div class="product-card">
+            <img
+              src="assets/images/jacket.png"
+              alt="Uniform 035648"
+              class="product-image"
+            />
+            <div class="product-info">
+              <h3 class="product-name">Uniform 035648</h3>
+              <p class="product-price">$ 34.00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collection-cta">
+          <a href="#" class="btn-shop">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-newsletter">
+            <h3 class="newsletter-title">
+              For Unlimited Offers,<br />Subscribe It.
+            </h3>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Enter your email" required />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+
+          <div class="footer-links">
+            <h4 class="footer-title">By Category</h4>
+            <ul>
+              <li><a href="#">Polo T-Shirts</a></li>
+              <li><a href="#">T-Shirts (Printed)</a></li>
+              <li><a href="#">Corporate Uniforms</a></li>
+              <li><a href="#">Hospital & Medical</a></li>
+              <li><a href="#">School Uniforms</a></li>
+              <li><a href="#">Event & Promotional</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h4 class="footer-title">By Category</h4>
+            <ul>
+              <li><a href="#">Cotton</a></li>
+              <li><a href="#">Polyester</a></li>
+              <li><a href="#">Blends</a></li>
+              <li><a href="#">Performance/Fast-dry</a></li>
+              <li><a href="#">Customize</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h4 class="footer-title">About Us</h4>
+            <ul>
+              <li><a href="#">Resources</a></li>
+              <li><a href="#">Blog / Ideas</a></li>
+              <li><a href="#">Contact / Get a Quote</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
           <div class="social-links">
             <a href="#" aria-label="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"/>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
-                <line stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <rect
+                  x="2"
+                  y="2"
+                  width="20"
+                  height="20"
+                  rx="5"
+                  ry="5"
+                  stroke-width="2"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"
+                />
+                <line
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  x1="17.5"
+                  y1="6.5"
+                  x2="17.51"
+                  y2="6.5"
+                />
               </svg>
             </a>
             <a href="#" aria-label="Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                />
               </svg>
             </a>
           </div>
-        </div>
-        
-        <div class="footer-links">
-          <h4 class="footer-title">By Category</h4>
-          <ul>
-            <li><a href="#">Polo T-Shirts</a></li>
-            <li><a href="#">T-Shirts (Printed)</a></li>
-            <li><a href="#">Corporate Uniforms</a></li>
-            <li><a href="#">Hospital & Medical</a></li>
-            <li><a href="#">School Uniforms</a></li>
-            <li><a href="#">Event & Promotional</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-links">
-          <h4 class="footer-title">By Category</h4>
-          <ul>
-            <li><a href="#">Cotton</a></li>
-            <li><a href="#">Polyester</a></li>
-            <li><a href="#">Blends</a></li>
-            <li><a href="#">Performance/Fast-dry</a></li>
-            <li><a href="#">Customize</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-links">
-          <h4 class="footer-title">About Us</h4>
-          <ul>
-            <li><a href="#">Resources</a></li>
-            <li><a href="#">Blog / Ideas</a></li>
-            <li><a href="#">Contact / Get a Quote</a></li>
-          </ul>
+          <p>2026 &copy; Uniform. All Rights Reserved.</p>
         </div>
       </div>
-      
-      <div class="footer-bottom">
-        <p>2026 &copy; Uniform. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- JavaScript -->
-  <script src="js/main.js"></script>
-</body>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+  </body>
 </html>

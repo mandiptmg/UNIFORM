@@ -4,7 +4,7 @@
 
 /* Brand */
 $primary-color: #0dffa3;
-$primary-color-400: rgba($primary-color, 0.8);
+$primary-color-400: rgba($primary-color, 0.4);
 
 $bg-card-color: #f6f6f6;
 
@@ -24,6 +24,7 @@ $font-family-primary: "Lato";
 $font-family-mono: "Fira Code", monospace;
 
 /* Font Sizes */
+/* Font Sizes */
 $font-size-xs: 0.75rem; // 12px
 $font-size-sm: 15px; // 15px
 $font-size-base: 1rem; // 16px
@@ -33,7 +34,11 @@ $font-size-2xl: 1.5rem; // 24px
 $font-size-3xl: 27.25px; // 27.25px
 $font-size-4xl: 2.5rem; // 40px
 $font-size-5xl: 3rem; // 48px
-$font-size-6xl: 64.25px; // 60px
+$font-size-6xl: 64.25px; // 64.25px
+$font-size-7xl: 68px; // optional step
+$font-size-8xl: 73px; // 73px
+$font-size-9xl: 96px; // 96px
+$font-size-10xl: 120px; // 120px
 
 /* Font Weights */
 $font-weight-light: 300;

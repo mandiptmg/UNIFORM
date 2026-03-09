@@ -412,16 +412,42 @@ img {
   @include flex-between;
   flex-wrap: wrap;
   gap: $space-4;
-  margin-bottom: $space-8;
+  margin-bottom: $space-12;
+
+
+   .section-title {
+    font-family: $font-family-primary;
+    font-size: $font-size-6xl;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    color: $black-color;
+    text-align: center;
+    width: 100%;
+
+    @include responsive(md) {
+      font-size: $font-size-7xl;
+    }
+    @include responsive(lg) {
+      font-size: $font-size-8xl;
+    }
+  }
+  
+
 
   .section-title {
     font-family: $font-family-primary;
-    font-size: $font-size-2xl;
-    font-weight: $font-weight-bold;
+    font-size: $font-size-6xl;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
     color: $black-color;
+    text-align: center;
+    width: 100%;
 
     @include responsive(md) {
-      font-size: $font-size-3xl;
+      font-size: $font-size-7xl;
+    }
+    @include responsive(lg) {
+      font-size: $font-size-8xl;
     }
   }
 
@@ -507,13 +533,22 @@ img {
 ========================= */
 .product-card {
   @include grid-center;
-  @include transition;
+  transition: $transition;
+  &:hover {
+    // .product-image {
+    //   transform: scale(1.05);
+    // }
+
+    transform: scale(1.05);
+  }
 
   .product-image {
     width: 100%;
     height: 100%;
+    @include grid-center;
     object-fit: contain;
-    transition: $transition;
+    background: $bg-card-color;
+    padding: $space-5 0;
   }
 
   .product-info {
@@ -523,15 +558,27 @@ img {
     margin-left: 1.75rem;
 
     .product-name {
-      font-size: $font-size-xl;
+      font-size: $font-size-base;
       font-weight: $font-weight-semibold;
       color: $black-color;
       margin-bottom: $space-2;
+
+      @include responsive(md) {
+        font-size: $font-size-lg;
+      }
+
+      @include responsive(lg) {
+        font-size: $font-size-xl;
+      }
     }
 
     .product-colors {
+      // font-size: $font-size-sm;
       font-size: $font-size-xs;
-      color: #666;
+      @include responsive(md) {
+        font-size: 14.42px;
+      }
+      color: rgba($black-color, 0.8);
       margin-bottom: $space-2;
       @include flex-center;
       gap: $space-2;
@@ -541,7 +588,7 @@ img {
         gap: $space-1;
 
         .dot {
-          @include size(8px);
+          @include size(13.14px);
           border-radius: 50%;
           border: 1px solid $border-color;
 
@@ -549,25 +596,36 @@ img {
             background-color: $black-color;
           }
           &.gray {
-            background-color: #999;
+            background-color: #434343;
           }
           &.white {
             background-color: $white-color;
           }
           &.navy {
-            background-color: #1a237e;
+            background-color: #1c3c6b;
+          }
+          &.burgundy-dark {
+            background-color: #710004;
           }
           &.burgundy {
-            background-color: #800020;
+            background-color: #c53255;
           }
         }
       }
     }
 
     .product-price {
-      font-size: $font-size-base;
+      font-size: 14px;
       font-weight: $font-weight-bold;
       color: $black-color;
+
+      @include responsive(md) {
+        font-size: $font-size-base;
+      }
+
+      @include responsive(lg) {
+        font-size: $font-size-lg;
+      }
     }
   }
 }
@@ -576,7 +634,13 @@ img {
    PROMO BANNER
 ========================= */
 .promo-banner {
-  background-color: $primary-color;
+  background-image: url("../assets/images/banner-model.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include container(1700px);
+
   position: relative;
   overflow: hidden;
 
@@ -588,7 +652,7 @@ img {
 
     @include responsive(lg) {
       grid-template-columns: 1fr 1fr;
-      min-height: 450px;
+      min-height: 626px;
     }
   }
 
@@ -615,43 +679,42 @@ img {
 
     .banner-title {
       font-family: $font-family-primary;
-      font-size: $font-size-3xl;
+      font-size: $font-size-4xl;
       font-weight: $font-weight-bold;
       color: $black-color;
+      text-transform: uppercase;
       line-height: 1.2;
       margin-bottom: $space-6;
 
       @include responsive(md) {
-        font-size: $font-size-4xl;
+        font-size: $font-size-5xl;
       }
 
       @include responsive(lg) {
-        font-size: $font-size-5xl;
+        font-size: $font-size-6xl;
       }
     }
 
     .banner-link {
-      font-size: $font-size-sm;
+      font-size: $font-size-xl;
       font-weight: $font-weight-semibold;
+      text-transform: uppercase;
+
       color: $black-color;
       text-decoration: underline;
       text-underline-offset: 4px;
       @include flex-center;
       gap: $space-2;
       width: fit-content;
-      @include transition;
+      @include hover-scale;
 
-      &:hover {
-        gap: $space-3;
 
-        svg {
-          transform: translateX(4px);
-        }
+       @include responsive(md) {
+        font-size: $font-size-2xl;
       }
 
-      svg {
-        @include size(16px);
-        @include transition;
+      @include responsive(lg) {
+        font-size: $font-size-3xl;
       }
     }
   }
@@ -665,36 +728,47 @@ img {
   background-color: $white-color;
 
   @include responsive(lg) {
-    padding: $space-16 $space-12;
+    padding: $space-16 $space-12 $space-24;
   }
 
   .container {
     @include container(1400px);
   }
 
-  .category-tabs {
-    @include flex-center;
-    gap: $space-2;
-    flex-wrap: wrap;
-    margin-bottom: $space-8;
-
-    .category-btn {
-      padding: $space-2 $space-4;
-      font-size: $font-size-xs;
-      font-weight: $font-weight-semibold;
-      color: #666;
-      background-color: transparent;
-      border: 1px solid $border-color;
+  .category-tabs-container {
+    width: 100%;
+    @include grid-center;
+    .category-tabs {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      // gap: $space-2;
+      flex-wrap: wrap;
+      background-color: $bg-muted;
+      margin-bottom: $space-12;
       border-radius: $radius-full;
-      @include transition;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
 
-      &.active,
-      &:hover {
-        background-color: $primary-color;
-        border-color: $primary-color;
+      .category-btn {
+        padding: $space-3 $space-4;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-semibold;
         color: $black-color;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: $radius-full;
+        @include transition;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: $font-weight-regular;
+
+        &.active {
+          background-color: $primary-color;
+          font-weight: $font-weight-semibold;
+        }
+
+        &:hover {
+          background-color: $primary-color-400;
+        }
       }
     }
   }
@@ -798,6 +872,9 @@ img {
 
     .product-card {
       background-color: transparent;
+      .product-image {
+        background-color: transparent;
+      }
     }
   }
 
@@ -810,7 +887,8 @@ img {
       background-color: transparent;
       border: 2px solid $black-color;
       border-radius: $radius-full;
-      font-size: $font-size-sm;
+
+      font-size: $font-size-xs;
       font-weight: $font-weight-semibold;
       color: $black-color;
       text-transform: uppercase;
@@ -820,6 +898,10 @@ img {
       &:hover {
         background-color: $black-color;
         color: $white-color;
+      }
+
+      @include responsive(md) {
+        font-size: $font-size-sm;
       }
     }
   }
@@ -848,8 +930,13 @@ img {
     grid-template-columns: 1fr;
     gap: $space-10;
     margin-bottom: $space-10;
-
     @include responsive(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include responsive(lg) {
+      grid-template-columns: 1.5fr 1fr 1fr;
+    }
+    @include responsive(xl) {
       grid-template-columns: 1.5fr 1fr 1fr 1fr;
     }
   }
@@ -857,15 +944,27 @@ img {
   .footer-newsletter {
     .newsletter-title {
       font-family: $font-family-primary;
-      font-size: $font-size-3xl;
+      font-size: $font-size-xl;
       font-weight: $font-weight-semibold;
       color: $black-color;
       margin-bottom: $space-4;
       line-height: 1.3;
+
+      @include responsive(md) {
+        font-size: $font-size-2xl;
+      }
+
+      @include responsive(lg) {
+        font-size: $font-size-3xl;
+      }
     }
 
     .newsletter-form {
-      width: 80%;
+      width: 100%;
+
+      @include responsive(lg) {
+        width: 80%;
+      }
       display: flex;
       gap: $space-2;
       border: 1px solid $black-color;
@@ -878,6 +977,7 @@ img {
         border: none;
         outline: none;
         @include transition;
+        width: 100%;
 
         &:focus {
           border-color: $primary-color;
@@ -935,7 +1035,12 @@ img {
     text-align: center;
     display: grid;
     align-items: center;
-    grid-template-columns: 1.3fr 3fr;
+    grid-template-columns: 1fr;
+    gap: $space-4;
+
+    @include responsive(md) {
+      grid-template-columns: 1.3fr 3fr;
+    }
 
     .social-links {
       @include flex-center;

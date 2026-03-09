@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="css/main.css" />
 
     <!-- Favicon -->
-    <link
+    <!-- <link
       rel="icon"
       type="image/svg+xml"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>U</text></svg>"
-    />
+    /> -->
   </head>
   <body>
     <!-- Top Banner -->
@@ -104,22 +104,28 @@
     <section class="hero" id="home">
       <div class="hero-container">
         <div class="hero-content">
-          <p class="hero-tagline">
-            Providing uniforms engineered for ease of movement and
-            breathability.
-          </p>
+          <div class="hero-tagline-container">
+            <div>
+              <div class="hero-tagline-bg"></div>
+              <p class="hero-tagline">
+                Providing uniforms engineered for ease of movement and
+                breathability.
+              </p>
+            </div>
+          </div>
+
           <h1 class="hero-title">
             Look<br />Professional<br /><span class="highlight"
               >Feel Exceptional</span
             >
           </h1>
         </div>
-        <div class="hero-image">
+        <!-- <div class="hero-image">
           <img
-            src="assets/images/hero-model.jpg"
+            src="assets/images/hero-model.png"
             alt="Professional medical scrubs model"
           />
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -127,7 +133,7 @@
     <section class="latest-collections" id="shop">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Latest Collections</h2>
+          <h2 class="section-latest-title">Latest Collections</h2>
           <div class="section-tabs">
             <button class="tab-btn active" data-tab="new">New</button>
             <button class="tab-btn" data-tab="women">Women</button>
@@ -223,10 +229,7 @@
         </div>
         <div class="banner-content">
           <h2 class="banner-title">Stylish &<br />Professional</h2>
-          <a href="#" class="banner-link">
-            Shop Now
-           
-          </a>
+          <a href="#" class="banner-link"> Shop Now </a>
         </div>
       </div>
     </section>
@@ -239,18 +242,16 @@
         </div>
 
         <div class="category-tabs-container">
-
-        <div class="category-tabs">
-          <button class="category-btn">Lab Coats</button>
-          <button class="category-btn">Scrub Sets</button>
-          <button class="category-btn">Scrub Tops</button>
-          <button class="category-btn active">Printed Tops</button>
-          <button class="category-btn">Scrub Pants</button>
-          <button class="category-btn">Jackets/Tees</button>
-          <button class="category-btn">Plus</button>
+          <div class="category-tabs">
+            <button class="category-btn">Lab Coats</button>
+            <button class="category-btn">Scrub Sets</button>
+            <button class="category-btn">Scrub Tops</button>
+            <button class="category-btn active">Printed Tops</button>
+            <button class="category-btn">Scrub Pants</button>
+            <button class="category-btn">Jackets/Tees</button>
+            <button class="category-btn">Plus</button>
+          </div>
         </div>
-        </div>
-
 
         <div class="products-grid">
           <!-- Product 1 -->
@@ -310,7 +311,7 @@
             </div>
           </div>
 
-           <!-- Product 4 -->
+          <!-- Product 4 -->
           <div class="product-card">
             <div class="product-image">
               <img src="assets/images/featured-1.png" alt="Uniform 035648" />
@@ -366,8 +367,6 @@
               <p class="product-price">$ 34.00</p>
             </div>
           </div>
-
-       
         </div>
       </div>
     </section>

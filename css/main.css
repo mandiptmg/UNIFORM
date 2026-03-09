@@ -10,7 +10,6 @@
    TYPOGRAPHY
    ======================= */
 /* Font Sizes */
-/* Font Sizes */
 /* Font Weights */
 /* Line Heights */
 /* =======================
@@ -342,19 +341,26 @@ img {
   background-color: #ededed;
   position: relative;
   overflow: hidden;
+  background-image: url("../assets/images/hero-model.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 1700px;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 .hero .hero-container {
   max-width: 1400px;
   margin-inline: auto;
   padding-inline: 1rem;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr;
+  place-items: center;
   min-height: 600px;
 }
 @media (min-width: 60rem) {
   .hero .hero-container {
-    grid-template-columns: 1fr 1fr;
-    min-height: 700px;
+    min-height: 837px;
   }
 }
 .hero .hero-content {
@@ -363,6 +369,7 @@ img {
   flex-direction: column;
   justify-content: center;
   order: 2;
+  margin-top: 8rem;
 }
 @media (min-width: 60rem) {
   .hero .hero-content {
@@ -370,49 +377,66 @@ img {
     order: 1;
   }
 }
-.hero .hero-content .hero-tagline {
-  font-size: 0.75rem;
+.hero .hero-content .hero-tagline-container {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+@media (min-width: 96rem) {
+  .hero .hero-content .hero-tagline-container {
+    margin-left: 4rem;
+  }
+}
+.hero .hero-content .hero-tagline-container .hero-tagline-bg {
+  width: 49px;
+  height: 5px;
+  background: #0dffa3;
+  margin: 0.5rem 0;
+}
+.hero .hero-content .hero-tagline-container .hero-tagline {
+  font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #666;
+  color: #000000;
   margin-bottom: 1.5rem;
-  max-width: 300px;
-  line-height: 1.6;
+  max-width: 250px;
+  text-align: left;
 }
 .hero .hero-content .hero-title {
   font-family: "Lato";
-  font-size: 2.5rem;
+  font-size: 27.25px;
   font-weight: 700;
-  line-height: 1.1;
+  text-transform: uppercase;
+  line-height: 0.9;
   color: #000000;
   margin-bottom: 1rem;
 }
+@media (min-width: 33.75rem) {
+  .hero .hero-content .hero-title {
+    font-size: 2.5rem;
+  }
+}
 @media (min-width: 45rem) {
   .hero .hero-content .hero-title {
-    font-size: 3rem;
+    font-size: 73px;
   }
 }
 @media (min-width: 60rem) {
   .hero .hero-content .hero-title {
-    font-size: 64.25px;
+    font-size: 96px;
+  }
+}
+@media (min-width: 71.25rem) {
+  .hero .hero-content .hero-title {
+    font-size: 106.53px;
   }
 }
 .hero .hero-content .hero-title .highlight {
-  color: #0dffa3;
+  background-color: #0dffa3;
   position: relative;
   display: inline-block;
-}
-.hero .hero-content .hero-title .highlight::after {
-  content: "";
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  width: 100%;
-  height: 12px;
-  background-color: #0dffa3;
-  opacity: 0.3;
-  z-index: -1;
+  padding: 0.5rem;
 }
 .hero .hero-content .hero-subtitle {
   font-size: 1.125rem;
@@ -431,12 +455,6 @@ img {
     min-height: auto;
   }
 }
-.hero .hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
 
 /* =========================
    SECTION HEADER
@@ -449,28 +467,27 @@ img {
   gap: 1rem;
   margin-bottom: 3rem;
 }
-.section-header .section-title {
+.section-header .section-latest-title {
   font-family: "Lato";
-  font-size: 64.25px;
+  font-size: 1.125rem;
   font-weight: 600;
   text-transform: uppercase;
   color: #000000;
-  text-align: center;
-  width: 100%;
+  text-align: left;
 }
 @media (min-width: 45rem) {
-  .section-header .section-title {
-    font-size: 68px;
+  .section-header .section-latest-title {
+    font-size: 21px;
   }
 }
 @media (min-width: 60rem) {
-  .section-header .section-title {
-    font-size: 73px;
+  .section-header .section-latest-title {
+    font-size: 1.5rem;
   }
 }
 .section-header .section-title {
   font-family: "Lato";
-  font-size: 64.25px;
+  font-size: 27.25px;
   font-weight: 600;
   text-transform: uppercase;
   color: #000000;
@@ -479,7 +496,12 @@ img {
 }
 @media (min-width: 45rem) {
   .section-header .section-title {
-    font-size: 68px;
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 45rem) {
+  .section-header .section-title {
+    font-size: 3rem;
   }
 }
 @media (min-width: 60rem) {
@@ -490,22 +512,27 @@ img {
 .section-header .section-tabs {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
   background-color: #ededed;
-  padding: 0.25rem;
-  border-radius: 0.5rem;
+  border-radius: 9999px;
 }
 .section-header .section-tabs .tab-btn {
-  padding: 0.5rem 1rem;
-  font-size: 15px;
-  font-weight: 500;
-  color: #666;
-  border-radius: 0.25rem;
-  transition: all 0.3s ease;
-}
-.section-header .section-tabs .tab-btn.active, .section-header .section-tabs .tab-btn:hover {
-  background-color: #0dffa3;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
   color: #000000;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
+.section-header .section-tabs .tab-btn.active {
+  background-color: #0dffa3;
+  font-weight: 600;
+}
+.section-header .section-tabs .tab-btn:hover {
+  background-color: rgba(13, 255, 163, 0.4);
 }
 .section-header .show-more {
   font-size: 15px;
@@ -514,6 +541,7 @@ img {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-transform: uppercase;
   transition: all 0.3s ease;
 }
 .section-header .show-more:hover {
@@ -670,8 +698,8 @@ img {
 .promo-banner {
   background-image: url("../assets/images/banner-model.png");
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
   max-width: 1700px;
   margin-inline: auto;
   padding-inline: 1rem;
@@ -683,30 +711,36 @@ img {
   margin-inline: auto;
   padding-inline: 1rem;
   display: grid;
-  grid-template-columns: 1fr;
-  min-height: 400px;
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
+}
+@media (min-width: 33.75rem) {
+  .promo-banner .banner-container {
+    min-height: 426px;
+  }
+}
+@media (min-width: 45rem) {
+  .promo-banner .banner-container {
+    min-height: 526px;
+  }
 }
 @media (min-width: 60rem) {
   .promo-banner .banner-container {
-    grid-template-columns: 1fr 1fr;
     min-height: 626px;
   }
 }
-.promo-banner .banner-image {
-  position: relative;
-  min-height: 350px;
-}
-.promo-banner .banner-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
 .promo-banner .banner-content {
   padding: 2rem 1.5rem;
+  padding-right: 0;
+  padding-left: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+@media (min-width: 33.75rem) {
+  .promo-banner .banner-content {
+    padding: 3rem;
+  }
 }
 @media (min-width: 60rem) {
   .promo-banner .banner-content {
@@ -715,16 +749,21 @@ img {
 }
 .promo-banner .banner-content .banner-title {
   font-family: "Lato";
-  font-size: 2.5rem;
+  font-size: 1.125rem;
   font-weight: 700;
   color: #000000;
   text-transform: uppercase;
   line-height: 1.2;
   margin-bottom: 1.5rem;
 }
+@media (min-width: 33.75rem) {
+  .promo-banner .banner-content .banner-title {
+    font-size: 27.25px;
+  }
+}
 @media (min-width: 45rem) {
   .promo-banner .banner-content .banner-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 @media (min-width: 60rem) {
@@ -733,7 +772,7 @@ img {
   }
 }
 .promo-banner .banner-content .banner-link {
-  font-size: 21px;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   color: #000000;
@@ -788,12 +827,23 @@ img {
   flex-wrap: wrap;
   background-color: #ededed;
   margin-bottom: 3rem;
-  border-radius: 9999px;
+  border-radius: 1.5rem;
+  padding: 0.5rem;
+}
+@media (min-width: 45rem) {
+  .featured-products .category-tabs-container .category-tabs {
+    border-radius: 9999px;
+  }
+}
+@media (min-width: 60rem) {
+  .featured-products .category-tabs-container .category-tabs {
+    border-radius: 9999px;
+    padding: 0;
+  }
 }
 .featured-products .category-tabs-container .category-tabs .category-btn {
   padding: 0.75rem 1rem;
   font-size: 0.75rem;
-  font-weight: 600;
   color: #000000;
   background-color: transparent;
   border: 1px solid transparent;

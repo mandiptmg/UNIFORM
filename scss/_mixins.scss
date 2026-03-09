@@ -23,11 +23,14 @@
 
 @mixin responsive($breakpoint) {
   $sizes: (
-    sm: 33.75rem,  // 540px
-    md: 45rem,     // 720px
-    lg: 60rem,     // 960px
-    xl: 71.25rem,  // 1140px
-    2xl: 96rem   // 1536px
+  xs: 30rem,      // 480px
+  sm: 33.75rem,   // 540px
+  md: 45rem,      // 720px
+  lg: 60rem,      // 960px
+  xl: 71.25rem,   // 1140px
+  2xl: 96rem,     // 1536px
+  3xl: 120rem,    // 1920px
+  4xl: 160rem     // 2560px
   );
 
   @if map-has-key($sizes, $breakpoint) {

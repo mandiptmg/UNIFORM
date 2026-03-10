@@ -135,35 +135,70 @@ img {
   color: $white-color;
   text-align: center;
   padding: $space-2 0;
-  font-size: $font-size-xs;
-  font-weight: $font-weight-medium;
+  font-size: 12.73px;
+  font-weight: $font-weight-light;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  @include grid-center;
+  height: 42px;
 }
 
 /* =========================
    NAVBAR
 ========================= */
+.navbar-freeze {
+  height: 73px;
+  background: $white-color;
+}
 .navbar {
   background-color: $white-color;
-  border-bottom: 1px solid $border-color;
-  position: sticky;
-  top: 0;
+  border-bottom: 1px solid transparent;
+  position: absolute;
+  width: 100%;
+  top: 42px;
   z-index: $z-sticky;
+  padding: $space-4 $space-6;
 
+  &.navbar-fixed {
+  position: fixed;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.9);
+  box-shadow: $shadow-md;
+}
+
+  @include responsive(lg) {
+    padding: $space-4 $space-12;
+  }
   .navbar-container {
     @include container(1400px);
     @include flex-between;
-    padding: $space-4 $space-6;
-
-    @include responsive(lg) {
-      padding: $space-4 $space-12;
-    }
+    gap: $space-4;
   }
 
   .nav-left {
     @include flex-center;
     gap: $space-8;
+
+    .menu-btn {
+      @include size(40px);
+      @include flex-center;
+      justify-content: center;
+      border-radius: $radius-md;
+      @include transition;
+
+      &:hover {
+        background-color: $bg-muted;
+      }
+
+      @include responsive(lg) {
+        display: none;
+      }
+
+      svg {
+        @include size(20px);
+      }
+    }
 
     .nav-links {
       display: none;
@@ -174,8 +209,9 @@ img {
       }
 
       a {
-        font-size: $font-size-sm;
-        font-weight: $font-weight-medium;
+        font-size: 13.38px;
+        text-transform: uppercase;
+        font-weight: $font-weight-regular;
         color: $black-color;
         @include transition;
 
@@ -188,8 +224,15 @@ img {
 
   .logo {
     font-family: $font-family-primary;
-    font-size: $font-size-xl;
-    font-weight: $font-weight-bold;
+    font-size: $font-size-base;
+
+    @include responsive(md) {
+      font-size: $font-size-lg;
+    }
+    @include responsive(lg) {
+      font-size: $font-size-xl;
+    }
+    font-weight: $font-weight-regular;
     letter-spacing: 0.15em;
     color: $black-color;
   }
@@ -207,8 +250,9 @@ img {
         color: $black-color;
         padding: $space-2 $space-5;
         border-radius: $radius-md;
-        font-size: $font-size-sm;
-        font-weight: $font-weight-semibold;
+        font-size: $font-size-xs;
+        text-transform: uppercase;
+        font-weight: $font-weight-bold;
         @include transition;
 
         &:hover {
@@ -217,8 +261,14 @@ img {
       }
     }
 
+    .nav-icons {
+      display: flex;
+      gap: $space-2;
+    }
+
     .search-btn,
-    .menu-btn {
+    .wishlist-btn,
+    .cart-btn {
       @include size(40px);
       @include flex-center;
       justify-content: center;
@@ -233,14 +283,11 @@ img {
         @include size(20px);
       }
     }
-
-    .menu-btn {
-      @include responsive(lg) {
-        display: none;
-      }
-    }
   }
 }
+
+
+
 
 /* Mobile Menu */
 .mobile-menu {
@@ -319,7 +366,13 @@ img {
   .hero-container {
     @include container(1400px);
     width: 100%;
-    @include grid-center;
+
+    display: grid;
+    place-items: end;
+    @include responsive(md) {
+      place-items: center;
+    }
+    // @include grid-center;
     min-height: 600px;
 
     @include responsive(lg) {
@@ -345,19 +398,18 @@ img {
       justify-content: right;
 
       @include responsive(2xl) {
-      margin-left: 4rem;
+        margin-left: 4rem;
       }
 
       .hero-tagline-bg {
-          width: 49px;
+        width: 49px;
 
-          height: 5px;
-          background: $primary-color;
-          margin: $space-2 0;
-        }
+        height: 5px;
+        background: $primary-color;
+        margin: $space-2 0;
+      }
       .hero-tagline {
-      
-        font-size: $font-size-lg;
+        font-size: $font-size-xs;
         font-weight: $font-weight-semibold;
         letter-spacing: 0.15em;
         text-transform: uppercase;
@@ -365,6 +417,14 @@ img {
         margin-bottom: $space-6;
         max-width: 250px;
         text-align: left;
+
+        @include responsive(md) {
+          font-size: $font-size-base;
+        }
+
+        @include responsive(lg) {
+          font-size: $font-size-lg;
+        }
       }
     }
 
@@ -388,7 +448,7 @@ img {
       @include responsive(lg) {
         font-size: $font-size-9xl;
       }
-        @include responsive(xl) {
+      @include responsive(xl) {
         font-size: $font-size-10xl;
       }
 

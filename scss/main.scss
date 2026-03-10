@@ -4,84 +4,7 @@
 /* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
-@font-face {
-  font-family: "ClashDisplay-Extralight";
-  src:
-    url("./fonts/ClashDisplay-Extralight.woff2") format("woff2"),
-    url("./fonts/ClashDisplay-Extralight.woff") format("woff"),
-    url("./fonts/ClashDisplay-Extralight.ttf") format("truetype");
-  font-weight: 200;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "ClashDisplay-Light";
-  src:
-    url("./fonts/ClashDisplay-Light.woff2") format("woff2"),
-    url("./fonts/ClashDisplay-Light.woff") format("woff"),
-    url("./fonts/ClashDisplay-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "ClashDisplay-Regular";
-  src:
-    url("./fonts/ClashDisplay-Regular.woff2") format("woff2"),
-    url("./fonts/ClashDisplay-Regular.woff") format("woff"),
-    url("./fonts/ClashDisplay-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "ClashDisplay-Medium";
-  src:
-    url("./fonts/ClashDisplay-Medium.woff2") format("woff2"),
-    url("./fonts/ClashDisplay-Medium.woff") format("woff"),
-    url("./fonts/ClashDisplay-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "ClashDisplay-Semibold";
-  src:
-    url("./fonts/ClashDisplay-Semibold.woff2") format("woff2"),
-    url("./fonts/ClashDisplay-Semibold.woff") format("woff"),
-    url("./fonts/ClashDisplay-Semibold.ttf") format("truetype");
-  font-weight: 600;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "ClashDisplay-Bold";
-  src:
-    url("./fonts/ClashDisplay-Bold.woff2") format("woff2"),
-    url("./fonts/ClashDisplay-Bold.woff") format("woff"),
-    url("./fonts/ClashDisplay-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-}
-/**
-* This is a variable font
-* You can control variable axes as shown below:
-* font-variation-settings: wght 700.0;
-*
-* available axes:
-'wght' (range from 200.0 to 700.0
-*/
-@font-face {
-  font-family: "ClashDisplay-Variable";
-  src:
-    url("./fonts/ClashDisplay-Variable.woff2") format("woff2"),
-    url("./fonts/ClashDisplay-Variable.woff") format("woff"),
-    url("./fonts/ClashDisplay-Variable.ttf") format("truetype");
-  font-weight: 200 700;
-  font-display: swap;
-  font-style: normal;
-}
+@import url("https://db.onlinewebfonts.com/c/063b1ecb77f04e4643e50307b2c53d9a?family=Clash+Display+Semibold");
 
 * {
   font-synthesis: none;
@@ -160,12 +83,12 @@ img {
   padding: $space-4 $space-6;
 
   &.navbar-fixed {
-  position: fixed;
-  top: 0;
-  backdrop-filter: blur(10px);
-  background: rgba(255,255,255,0.9);
-  box-shadow: $shadow-md;
-}
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: $shadow-md;
+  }
 
   @include responsive(lg) {
     padding: $space-4 $space-12;
@@ -285,9 +208,6 @@ img {
     }
   }
 }
-
-
-
 
 /* Mobile Menu */
 .mobile-menu {
@@ -409,6 +329,7 @@ img {
         margin: $space-2 0;
       }
       .hero-tagline {
+        // font-family: "Clash Display Semibold";
         font-size: $font-size-xs;
         font-weight: $font-weight-semibold;
         letter-spacing: 0.15em;
@@ -417,6 +338,7 @@ img {
         margin-bottom: $space-6;
         max-width: 250px;
         text-align: left;
+        // letter-spacing: 0.8px;
 
         @include responsive(md) {
           font-size: $font-size-base;
@@ -429,7 +351,7 @@ img {
     }
 
     .hero-title {
-      font-family: $font-family-primary;
+      // font-family: "Clash Display Semibold";
       font-size: $font-size-3xl;
       font-weight: $font-weight-bold;
       text-transform: uppercase;
@@ -457,6 +379,15 @@ img {
         position: relative;
         display: inline-block;
         padding: $space-2;
+        letter-spacing: 5.4px;
+        font-size: $font-size-4xl;
+        font-weight: $font-weight-semibold;
+        @include responsive(md) {
+          font-size: $font-size-5xl;
+        }
+        @include responsive(lg) {
+          font-size: 55.88px;
+        }
         // &::after {
         //   content: "";
         //   position: absolute;

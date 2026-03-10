@@ -4,7 +4,44 @@
 /* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
-@import url("https://db.onlinewebfonts.com/c/063b1ecb77f04e4643e50307b2c53d9a?family=Clash+Display+Semibold");
+@import url(https://db.onlinewebfonts.com/c/029689055aab954f65aac69f5bdfdd26?family=Clash+Display);
+
+@import url(https://db.onlinewebfonts.com/c/063b1ecb77f04e4643e50307b2c53d9a?family=Clash+Display+Semibold);
+
+@import url(https://db.onlinewebfonts.com/c/bb8d6c1363f02b8af73744aa5fc43627?family=Clash+Display+Medium);
+
+/* Medium */
+// @font-face {
+//   font-family: "Clash Display";
+//   src:
+//     url("./fonts/Clash\ Display\ Medium.woff2") format("woff2"),
+//     url("./fonts/Clash\ Display\ Medium.woff") format("woff");
+//   font-weight: 400;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+/* Semibold */
+// @font-face {
+//   font-family: "Clash Display";
+//   src:
+//     url("./fonts/Clash\ Display\ Semibold.woff2") format("woff2"),
+//     url("./fonts/Clash\ Display\ Semibold.woff") format("woff");
+//   font-weight: 600;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+/* Bold */
+// @font-face {
+//   font-family: "Clash Display";
+//   src:
+//     url("./fonts/Clash\ Display\ Bold.woff2") format("woff2"),
+//     url("./fonts/Clash\ Display\ Bold.woff") format("woff");
+//   font-weight: 700;
+//   font-style: normal;
+//   font-display: swap;
+// }
 
 * {
   font-synthesis: none;
@@ -292,7 +329,6 @@ img {
     @include responsive(md) {
       place-items: center;
     }
-    // @include grid-center;
     min-height: 600px;
 
     @include responsive(lg) {
@@ -308,7 +344,7 @@ img {
     margin-top: $space-32;
 
     @include responsive(lg) {
-      padding: $space-12;
+      // padding: $space-12;
       order: 1;
     }
 
@@ -439,7 +475,7 @@ img {
   margin-bottom: $space-12;
 
   .section-latest-title {
-    font-family: $font-family-primary;
+    font-family: $font-family-clash-display-semibold;
     font-size: $font-size-lg;
     font-weight: $font-weight-semibold;
     text-transform: uppercase;
@@ -455,7 +491,8 @@ img {
   }
 
   .section-title {
-    font-family: $font-family-primary;
+      font-family: $font-family-clash-display-semibold;
+
     font-size: $font-size-3xl;
     font-weight: $font-weight-semibold;
     text-transform: uppercase;
@@ -705,6 +742,7 @@ img {
   .banner-content {
     padding: $space-8 $space-6;
     padding-right: 0;
+    margin-top: -4rem;
     padding-left: $space-12;
     @include flex-column;
     justify-content: center;
@@ -718,12 +756,13 @@ img {
     }
 
     .banner-title {
-      font-family: $font-family-primary;
+      font-family: $font-family-clash-display-semibold;
+
       font-size: $font-size-lg;
-      font-weight: $font-weight-bold;
+      font-weight: $font-weight-semibold;
       color: $black-color;
       text-transform: uppercase;
-      line-height: 1.2;
+      line-height: 0.8;
       margin-bottom: $space-6;
 
       @include responsive(sm) {
@@ -742,6 +781,8 @@ img {
     .banner-link {
       font-size: $font-size-base;
       font-weight: $font-weight-semibold;
+      font-family: $font-family-clash-display-semibold;
+
       text-transform: uppercase;
 
       color: $black-color;
@@ -802,7 +843,7 @@ img {
       }
 
       .category-btn {
-        padding: $space-3 $space-4;
+        padding: $space-3 $space-6;
         font-size: $font-size-xs;
         color: $black-color;
         background-color: transparent;
@@ -811,10 +852,14 @@ img {
         @include transition;
         text-transform: uppercase;
         letter-spacing: 0.05em;
+        font-family: $font-family-clash-display-regular;
+
         font-weight: $font-weight-regular;
 
         &.active {
           background-color: $primary-color;
+          font-family: $font-family-clash-display-semibold;
+
           font-weight: $font-weight-semibold;
         }
 
@@ -878,10 +923,11 @@ img {
 
     .collection-subtitle {
       font-size: $font-size-xl;
+      font-family: $font-family-clash-display-semibold;
       font-weight: $font-weight-semibold;
       text-transform: uppercase;
       color: $black-color;
-      margin-bottom: $space-2;
+      margin-bottom: $space-3;
       @include responsive(md) {
         font-size: $font-size-2xl;
       }
@@ -892,7 +938,9 @@ img {
     }
 
     .collection-title {
-      font-family: $font-family-primary;
+      font-family: $font-family-clash-display-semibold;
+      text-transform: uppercase;
+      line-height: 0.8;
       font-size: $font-size-4xl;
       font-weight: $font-weight-semibold;
       color: $black-color;
@@ -939,7 +987,7 @@ img {
       background-color: transparent;
       border: 2px solid $black-color;
       border-radius: $radius-full;
-
+      font-family: $font-family-clash-display-semibold;
       font-size: $font-size-xs;
       font-weight: $font-weight-semibold;
       color: $black-color;
@@ -995,7 +1043,8 @@ img {
 
   .footer-newsletter {
     .newsletter-title {
-      font-family: $font-family-primary;
+      font-family: $font-family-clash-display-semibold;
+      text-transform: uppercase;
       font-size: $font-size-xl;
       font-weight: $font-weight-semibold;
       color: $black-color;
@@ -1045,6 +1094,8 @@ img {
         padding: $space-3 $space-5;
         background-color: $primary-color;
         border-radius: $radius-full;
+        font-family: $font-family-clash-display-semibold;
+        text-transform: uppercase;
         font-size: 13px;
         font-weight: $font-weight-semibold;
         color: $black-color;

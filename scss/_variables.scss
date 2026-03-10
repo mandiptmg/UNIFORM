@@ -12,16 +12,17 @@ $bg-card-color: #f6f6f6;
 $black-color: #000000;
 $white-color: #ffffff;
 
-
 /* Backgrounds */
 $bg-muted: #ededed;
-
 
 /* =======================
    TYPOGRAPHY
    ======================= */
 $font-family-primary: "Lato";
 $font-family-mono: "Fira Code", monospace;
+$font-family-clash-display-bold: "Clash Display";
+$font-family-clash-display-regular: "Clash Display Medium";
+$font-family-clash-display-semibold: "Clash Display Semibold";
 
 /* Font Sizes */
 $font-size-xs: 0.75rem; // 12px
@@ -79,7 +80,7 @@ $border-color: #dfdfdf;
 
 $radius-xs: 0.125rem; // 2px
 $radius-sm: 0.25rem; // 4px
-$radius-md: 0.5rem;    // 8px
+$radius-md: 0.5rem; // 8px
 $radius-lg: 1rem; // 16px
 $radius-xl: 1.5rem; // 24px
 $radius-full: 9999px;

@@ -1,6 +1,8 @@
 /* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
-@import url("https://db.onlinewebfonts.com/c/063b1ecb77f04e4643e50307b2c53d9a?family=Clash+Display+Semibold");
+@import url(https://db.onlinewebfonts.com/c/029689055aab954f65aac69f5bdfdd26?family=Clash+Display);
+@import url(https://db.onlinewebfonts.com/c/063b1ecb77f04e4643e50307b2c53d9a?family=Clash+Display+Semibold);
+@import url(https://db.onlinewebfonts.com/c/bb8d6c1363f02b8af73744aa5fc43627?family=Clash+Display+Medium);
 /* =======================
    COLORS
    ======================= */
@@ -61,6 +63,9 @@
 /* =========================
    CONTAINER
 ========================= */
+/* Medium */
+/* Semibold */
+/* Bold */
 * {
   font-synthesis: none;
   margin: 0;
@@ -378,7 +383,6 @@ img {
 }
 @media (min-width: 60rem) {
   .hero .hero-content {
-    padding: 3rem;
     order: 1;
   }
 }
@@ -495,7 +499,7 @@ img {
   margin-bottom: 3rem;
 }
 .section-header .section-latest-title {
-  font-family: "Lato";
+  font-family: "Clash Display Semibold";
   font-size: 1.125rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -513,7 +517,7 @@ img {
   }
 }
 .section-header .section-title {
-  font-family: "Lato";
+  font-family: "Clash Display Semibold";
   font-size: 27.25px;
   font-weight: 600;
   text-transform: uppercase;
@@ -759,6 +763,7 @@ img {
 .promo-banner .banner-content {
   padding: 2rem 1.5rem;
   padding-right: 0;
+  margin-top: -4rem;
   padding-left: 3rem;
   display: flex;
   flex-direction: column;
@@ -775,12 +780,12 @@ img {
   }
 }
 .promo-banner .banner-content .banner-title {
-  font-family: "Lato";
+  font-family: "Clash Display Semibold";
   font-size: 1.125rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #000000;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 0.8;
   margin-bottom: 1.5rem;
 }
 @media (min-width: 33.75rem) {
@@ -801,6 +806,7 @@ img {
 .promo-banner .banner-content .banner-link {
   font-size: 1rem;
   font-weight: 600;
+  font-family: "Clash Display Semibold";
   text-transform: uppercase;
   color: #000000;
   text-decoration: underline;
@@ -869,7 +875,7 @@ img {
   }
 }
 .featured-products .category-tabs-container .category-tabs .category-btn {
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1.5rem;
   font-size: 0.75rem;
   color: #000000;
   background-color: transparent;
@@ -878,10 +884,12 @@ img {
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-family: "Clash Display Medium";
   font-weight: 400;
 }
 .featured-products .category-tabs-container .category-tabs .category-btn.active {
   background-color: #0dffa3;
+  font-family: "Clash Display Semibold";
   font-weight: 600;
 }
 .featured-products .category-tabs-container .category-tabs .category-btn:hover {
@@ -942,10 +950,11 @@ img {
 }
 .jacket-collection .collection-header .collection-subtitle {
   font-size: 21px;
+  font-family: "Clash Display Semibold";
   font-weight: 600;
   text-transform: uppercase;
   color: #000000;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 @media (min-width: 45rem) {
   .jacket-collection .collection-header .collection-subtitle {
@@ -958,7 +967,9 @@ img {
   }
 }
 .jacket-collection .collection-header .collection-title {
-  font-family: "Lato";
+  font-family: "Clash Display Semibold";
+  text-transform: uppercase;
+  line-height: 0.8;
   font-size: 2.5rem;
   font-weight: 600;
   color: #000000;
@@ -1005,6 +1016,7 @@ img {
   background-color: transparent;
   border: 2px solid #000000;
   border-radius: 9999px;
+  font-family: "Clash Display Semibold";
   font-size: 0.75rem;
   font-weight: 600;
   color: #000000;
@@ -1064,7 +1076,8 @@ img {
   }
 }
 .footer .footer-newsletter .newsletter-title {
-  font-family: "Lato";
+  font-family: "Clash Display Semibold";
+  text-transform: uppercase;
   font-size: 21px;
   font-weight: 600;
   color: #000000;
@@ -1115,6 +1128,8 @@ img {
   padding: 0.75rem 1.25rem;
   background-color: #0dffa3;
   border-radius: 9999px;
+  font-family: "Clash Display Semibold";
+  text-transform: uppercase;
   font-size: 13px;
   font-weight: 600;
   color: #000000;

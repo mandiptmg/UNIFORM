@@ -246,20 +246,17 @@ img {
       }
     }
 
-    .wishlist-btn{
+    .wishlist-btn {
       position: relative;
-       .icon-btn-dot{
+      .icon-btn-dot {
         position: absolute;
         top: 14px;
         right: 10px;
         border-radius: $radius-full;
-      @include size(5px);
-      background-color: $primary-color;
-
+        @include size(5px);
+        background-color: $primary-color;
+      }
     }
-    }
-
-   
   }
 }
 
@@ -1223,6 +1220,7 @@ img {
         font-size: $font-size-sm;
         border: none;
         outline: none;
+        background: transparent;
         @include transition;
         width: 100%;
 

@@ -1258,6 +1258,7 @@ img {
   font-size: 15px;
   border: none;
   outline: none;
+  background: transparent;
   transition: all 0.3s ease;
   width: 100%;
 }

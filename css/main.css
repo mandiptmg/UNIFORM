@@ -3,6 +3,7 @@
 @import url(https://db.onlinewebfonts.com/c/029689055aab954f65aac69f5bdfdd26?family=Clash+Display);
 @import url(https://db.onlinewebfonts.com/c/063b1ecb77f04e4643e50307b2c53d9a?family=Clash+Display+Semibold);
 @import url(https://db.onlinewebfonts.com/c/bb8d6c1363f02b8af73744aa5fc43627?family=Clash+Display+Medium);
+@import url(https://db.onlinewebfonts.com/c/dc0f15413a06006c46bd3204d95b2ece?family=Elsie);
 /* =======================
    COLORS
    ======================= */
@@ -212,7 +213,7 @@ img {
   color: #0dffa3;
 }
 .navbar .logo {
-  font-family: "Lato";
+  font-family: "Elsie";
   font-size: 1rem;
 }
 @media (min-width: 45rem) {
@@ -337,6 +338,142 @@ img {
   visibility: visible;
 }
 
+/* ===================================
+   SEARCH MODAL
+=================================== */
+.search-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+}
+.search-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* overlay */
+.search-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+}
+
+/* ===================================
+   SEARCH CONTAINER
+=================================== */
+.search-container {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  margin: 120px auto;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  transform: translateY(-30px);
+  transition: all 0.35s ease;
+  padding: 4rem 1rem 1rem;
+}
+@media (min-width: 45rem) {
+  .search-container {
+    padding: 5rem 1.5rem 1.5rem;
+  }
+}
+
+.search-modal.active .search-container {
+  transform: translateY(0);
+}
+
+/* ===================================
+   SEARCH BOX
+=================================== */
+.search-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+@media (min-width: 33.75rem) {
+  .search-box {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* ===================================
+   INPUT
+=================================== */
+.search-input {
+  flex: 1;
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #dfdfdf;
+  outline: none;
+  transition: border 0.2s ease;
+}
+.search-input:focus {
+  border-color: #0dffa3;
+}
+@media (min-width: 45rem) {
+  .search-input {
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+}
+
+/* ===================================
+   BUTTON
+=================================== */
+.search-submit {
+  background: #0dffa3;
+  color: #000000;
+  padding: 14px 22px;
+  border-radius: 8px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Clash Display Semibold";
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.search-submit:hover {
+  transform: translateY(-2px);
+}
+@media (min-width: 33.75rem) {
+  .search-submit {
+    padding: 16px 26px;
+  }
+}
+
+/* ===================================
+   CLOSE BUTTON
+=================================== */
+.search-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 20px;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+@media (min-width: 45rem) {
+  .search-close {
+    font-size: 22px;
+    top: 16px;
+    right: 16px;
+  }
+}
+
 /* =========================
    HERO SECTION
 ========================= */
@@ -378,23 +515,24 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  order: 2;
-  margin-top: 8rem;
+  width: 100%;
+  margin-top: 2.5rem;
+}
+@media (min-width: 45rem) {
+  .hero .hero-content {
+    margin-top: 3rem;
+    width: 80%;
+  }
 }
 @media (min-width: 60rem) {
   .hero .hero-content {
-    order: 1;
+    margin-top: 4rem;
   }
 }
 .hero .hero-content .hero-tagline-container {
   width: 100%;
   display: flex;
   justify-content: right;
-}
-@media (min-width: 96rem) {
-  .hero .hero-content .hero-tagline-container {
-    margin-left: 4rem;
-  }
 }
 .hero .hero-content .hero-tagline-container .hero-tagline-bg {
   width: 49px;
@@ -403,9 +541,9 @@ img {
   margin: 0.5rem 0;
 }
 .hero .hero-content .hero-tagline-container .hero-tagline {
+  font-family: "Clash Display Semibold";
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #000000;
   margin-bottom: 1.5rem;
@@ -425,10 +563,13 @@ img {
 .hero .hero-content .hero-title {
   font-size: 27.25px;
   font-weight: 700;
+  font-family: "Clash Display Semibold";
   text-transform: uppercase;
-  line-height: 0.9;
+  line-height: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   color: #000000;
-  margin-bottom: 1rem;
 }
 @media (min-width: 33.75rem) {
   .hero .hero-content .hero-title {
@@ -438,11 +579,13 @@ img {
 @media (min-width: 45rem) {
   .hero .hero-content .hero-title {
     font-size: 73px;
+    padding-left: 4rem;
   }
 }
 @media (min-width: 60rem) {
   .hero .hero-content .hero-title {
     font-size: 96px;
+    padding-left: 6rem;
   }
 }
 @media (min-width: 71.25rem) {
@@ -451,13 +594,13 @@ img {
   }
 }
 .hero .hero-content .hero-title .highlight {
-  background-color: #0dffa3;
-  position: relative;
   display: inline-block;
-  padding: 0.5rem;
-  letter-spacing: 5.4px;
-  font-size: 2.5rem;
+  background-color: #0dffa3;
+  padding: 0.5rem 0.75rem;
   font-weight: 600;
+  letter-spacing: 5.4px;
+  line-height: 1;
+  font-size: 1.125rem;
 }
 @media (min-width: 45rem) {
   .hero .hero-content .hero-title .highlight {
@@ -467,23 +610,6 @@ img {
 @media (min-width: 60rem) {
   .hero .hero-content .hero-title .highlight {
     font-size: 55.88px;
-  }
-}
-.hero .hero-content .hero-subtitle {
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: #000000;
-  margin-bottom: 2rem;
-}
-.hero .hero-image {
-  position: relative;
-  order: 1;
-  min-height: 400px;
-}
-@media (min-width: 60rem) {
-  .hero .hero-image {
-    order: 2;
-    min-height: auto;
   }
 }
 
@@ -518,12 +644,17 @@ img {
 }
 .section-header .section-title {
   font-family: "Clash Display Semibold";
-  font-size: 27.25px;
+  font-size: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;
   color: #000000;
   text-align: center;
   width: 100%;
+}
+@media (min-width: 33.75rem) {
+  .section-header .section-title {
+    font-size: 27.25px;
+  }
 }
 @media (min-width: 45rem) {
   .section-header .section-title {
@@ -742,7 +873,7 @@ img {
   margin-inline: auto;
   padding-inline: 1rem;
   display: grid;
-  height: 100%;
+  height: 300px;
   grid-template-columns: 1fr 1fr;
 }
 @media (min-width: 33.75rem) {

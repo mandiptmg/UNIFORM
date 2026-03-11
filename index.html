@@ -24,7 +24,7 @@
     <div class="top-banner">New Collection Released Now</div>
 
     <!-- Navbar -->
-     <!-- <nav class="navbar-freeze"></nav> -->
+     <nav class="navbar-freeze"></nav>
     <nav class="navbar">
       <div class="navbar-container">
         <div class="nav-left">
@@ -76,7 +76,7 @@
           </button>
 
           <!-- Cart -->
-          <button class="icon-btn cart-btn" aria-label="Cart">
+          <a  href="#" class="icon-btn cart-btn" aria-label="Cart">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -90,10 +90,10 @@
                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 7h13M7 13L5.4 5M9 21a1 1 0 102 0 1 1 0 00-2 0zm8 0a1 1 0 102 0 1 1 0 00-2 0z"
               />
             </svg>
-          </button>
+          </a >
 
           <!-- Wishlist -->
-          <button class="icon-btn wishlist-btn" aria-label="Wishlist">
+          <a  href="#" class="icon-btn wishlist-btn" aria-label="Wishlist">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -107,10 +107,34 @@
                 d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21 4.318 12.682a4.5 4.5 0 010-6.364z"
               />
             </svg>
-          </button>
+          </a >
         </div>
       </div>
     </nav>
+
+    <!-- search modal  -->
+    <div class="search-modal" id="searchModal">
+  <div class="search-overlay"></div>
+
+  <div class="search-container">
+    <button class="search-close" id="closeSearch">
+      ✕
+    </button>
+
+    <div class="search-box">
+      <input
+        type="text"
+        placeholder="Search products..."
+        class="search-input"
+      />
+
+      <button class="search-submit">
+        Search
+      </button>
+    </div>
+  </div>
+</div>
+
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
@@ -154,7 +178,12 @@
           </div>
 
           <h1 class="hero-title">
-            Look<br />Professional<br /><span class="highlight"
+            <span>
+Look <br>
+Professional
+            </span>
+
+          <span class="highlight"
               >Feel Exceptional</span
             >
           </h1>

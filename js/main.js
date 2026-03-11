@@ -1,18 +1,40 @@
-// Mobile Menu Functionality
+/* =====================================================
+   DOM ELEMENTS
+===================================================== */
+
+const navbar = document.querySelector(".navbar");
+
 const menuBtn = document.getElementById("menuBtn");
 const closeMenuBtn = document.getElementById("closeMenuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const mobileOverlay = document.getElementById("mobileOverlay");
 
+const searchBtn = document.querySelector(".search-btn");
+const searchModal = document.getElementById("searchModal");
+const closeSearch = document.getElementById("closeSearch");
+const searchOverlay = document.querySelector(".search-overlay");
+
+const tabBtns = document.querySelectorAll(".section-tabs .tab-btn");
+const categoryBtns = document.querySelectorAll(".category-tabs .category-btn");
+const mobileNavLinks = document.querySelectorAll(".mobile-nav-links a");
+const productCards = document.querySelectorAll(".product-card");
+const revealElements = document.querySelectorAll("section");
+
+const newsletterForm = document.querySelector(".newsletter-form");
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
 function openMobileMenu() {
-  mobileMenu.classList.add("active");
-  mobileOverlay.classList.add("active");
+  mobileMenu?.classList.add("active");
+  mobileOverlay?.classList.add("active");
   document.body.style.overflow = "hidden";
 }
 
 function closeMobileMenu() {
-  mobileMenu.classList.remove("active");
-  mobileOverlay.classList.remove("active");
+  mobileMenu?.classList.remove("active");
+  mobileOverlay?.classList.remove("active");
   document.body.style.overflow = "";
 }
 
@@ -20,183 +42,145 @@ menuBtn?.addEventListener("click", openMobileMenu);
 closeMenuBtn?.addEventListener("click", closeMobileMenu);
 mobileOverlay?.addEventListener("click", closeMobileMenu);
 
-// Close mobile menu when clicking on a link
-const mobileNavLinks = document.querySelectorAll(".mobile-nav-links a");
-mobileNavLinks.forEach((link) => {
-  link.addEventListener("click", closeMobileMenu);
-});
+mobileNavLinks.forEach(link =>
+  link.addEventListener("click", closeMobileMenu)
+);
 
-// Tab Functionality for Latest Collections
-const tabBtns = document.querySelectorAll(".section-tabs .tab-btn");
+/* =====================================================
+   SEARCH MODAL
+===================================================== */
 
-tabBtns.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    // Remove active class from all tabs
-    tabBtns.forEach((tab) => tab.classList.remove("active"));
-    // Add active class to clicked tab
-    this.classList.add("active");
-
-    // Here you would typically load different products based on the tab
-    const tabName = this.dataset.tab;
-    console.log(`Switched to ${tabName} tab`);
-  });
-});
-
-// Category Tabs Functionality
-const categoryBtns = document.querySelectorAll(".category-tabs .category-btn");
-
-categoryBtns.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    // Remove active class from all category buttons
-    categoryBtns.forEach((tab) => tab.classList.remove("active"));
-    // Add active class to clicked button
-    this.classList.add("active");
-
-    // Here you would typically filter products based on category
-    const category = this.textContent;
-    console.log(`Filtered by category: ${category}`);
-  });
-});
-
-// Scroll Reveal Animation
-const revealElements = document.querySelectorAll(".reveal");
-
-function revealOnScroll() {
-  revealElements.forEach((element) => {
-    const elementTop = element.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    if (elementTop < windowHeight - 100) {
-      element.classList.add("revealed");
-    }
-  });
+function openSearchModal() {
+  searchModal?.classList.add("active");
+  document.body.style.overflow = "hidden";
 }
 
-// Add reveal class to sections
-const sections = document.querySelectorAll("section");
-sections.forEach((section) => {
-  section.classList.add("reveal");
-});
+function closeSearchModal() {
+  searchModal?.classList.remove("active");
+  document.body.style.overflow = "";
+}
 
-// Initial check and scroll listener
-window.addEventListener("load", revealOnScroll);
-window.addEventListener("scroll", revealOnScroll);
+searchBtn?.addEventListener("click", openSearchModal);
+closeSearch?.addEventListener("click", closeSearchModal);
+searchOverlay?.addEventListener("click", closeSearchModal);
 
-// // Navbar scroll effect
-// const navbar = document.querySelector('.navbar');
-// let lastScrollY = window.scrollY;
-
-// window.addEventListener('scroll', () => {
-//   if (window.scrollY > 100) {
-//     navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-//   } else {
-//     navbar.style.boxShadow = 'none';
-//   }
-
-//   lastScrollY = window.scrollY;
-// });
-
-const navbar = document.querySelector(".navbar");
+/* =====================================================
+   NAVBAR SCROLL EFFECT
+===================================================== */
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY >= 42) {
-    navbar.classList.add("navbar-fixed");
-  } else {
-    navbar.classList.remove("navbar-fixed");
-  }
+  navbar?.classList.toggle("navbar-fixed", window.scrollY >= 42);
 });
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+/* =====================================================
+   TABS
+===================================================== */
+
+function activateTab(buttons, activeBtn) {
+  buttons.forEach(btn => btn.classList.remove("active"));
+  activeBtn.classList.add("active");
+}
+
+tabBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    activateTab(tabBtns, btn);
+    console.log(`Switched to ${btn.dataset.tab}`);
+  });
+});
+
+categoryBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    activateTab(categoryBtns, btn);
+    console.log(`Filtered by category: ${btn.textContent}`);
+  });
+});
+
+/* =====================================================
+   SMOOTH SCROLL
+===================================================== */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function (e) {
-    e.preventDefault();
     const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      const headerOffset = 80;
-      const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
+    if (!target) return;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
+    e.preventDefault();
+
+    const offset = 80;
+    const top =
+      target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
   });
 });
 
-// Newsletter form submission
-const newsletterForm = document.querySelector(".newsletter-form");
-newsletterForm?.addEventListener("submit", function (e) {
-  e.preventDefault();
-  const email = this.querySelector('input[type="email"]').value;
+/* =====================================================
+   NEWSLETTER FORM
+===================================================== */
 
-  // Show success message (in a real app, you'd send this to a server)
+newsletterForm?.addEventListener("submit", e => {
+  e.preventDefault();
+
+  const email = newsletterForm.querySelector('input[type="email"]').value;
+
   alert(`Thank you for subscribing with: ${email}`);
-  this.reset();
+  newsletterForm.reset();
 });
 
-// Product card hover effect enhancement
-const productCards = document.querySelectorAll(".product-card");
-productCards.forEach((card) => {
-  card.addEventListener("mouseenter", function () {
-    this.style.cursor = "pointer";
+/* =====================================================
+   PRODUCT CARD INTERACTION
+===================================================== */
+
+productCards.forEach(card => {
+  card.style.cursor = "pointer";
+
+  card.addEventListener("click", () => {
+    const name = card.querySelector(".product-name")?.textContent;
+    console.log(`Clicked on ${name}`);
   });
-
-  card.addEventListener("click", function () {
-    const productName = this.querySelector(".product-name")?.textContent;
-    console.log(`Clicked on ${productName}`);
-    // In a real app, this would navigate to the product detail page
-  });
 });
 
-// Search button functionality
-const searchBtn = document.querySelector(".search-btn");
-searchBtn?.addEventListener("click", function () {
-  // In a real app, this would open a search modal or redirect to search page
-  const searchTerm = prompt("Enter search term:");
-  if (searchTerm) {
-    console.log(`Searching for: ${searchTerm}`);
-  }
-});
+/* =====================================================
+   IMAGE FADE IN
+===================================================== */
 
-// Get a Quote button
-const quoteBtn = document.querySelector(".btn-quote");
-quoteBtn?.addEventListener("click", function (e) {
-  e.preventDefault();
-  // In a real app, this would open a quote modal or redirect to quote page
-  alert("Get a Quote feature coming soon!");
-});
-
-// Add loading animation for images
-const images = document.querySelectorAll("img");
-images.forEach((img) => {
-  img.addEventListener("load", function () {
-    this.style.opacity = "1";
-  });
+document.querySelectorAll("img").forEach(img => {
   img.style.opacity = "0";
   img.style.transition = "opacity 0.3s ease";
+
+  img.addEventListener("load", () => {
+    img.style.opacity = "1";
+  });
 });
 
-// Intersection Observer for better performance
-const observerOptions = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0.1,
-};
+/* =====================================================
+   SCROLL REVEAL (INTERSECTION OBSERVER)
+===================================================== */
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("revealed");
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("revealed");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
 
-// Observe all sections
-document.querySelectorAll("section").forEach((section) => {
+revealElements.forEach(section => {
+  section.classList.add("reveal");
   observer.observe(section);
 });
 
-console.log("UNIFORM website loaded successfully!");
+/* =====================================================
+   INIT
+===================================================== */
+
+window.addEventListener("load", () => {
+  console.log("UNIFORM website loaded successfully!");
+});

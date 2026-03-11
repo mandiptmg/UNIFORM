@@ -10,6 +10,8 @@
 
 @import url(https://db.onlinewebfonts.com/c/bb8d6c1363f02b8af73744aa5fc43627?family=Clash+Display+Medium);
 
+@import url(https://db.onlinewebfonts.com/c/dc0f15413a06006c46bd3204d95b2ece?family=Elsie);
+
 /* Medium */
 // @font-face {
 //   font-family: "Clash Display";
@@ -183,7 +185,7 @@ img {
   }
 
   .logo {
-    font-family: $font-family-primary;
+    font-family: $font-family-elsie;
     font-size: $font-size-base;
 
     @include responsive(md) {
@@ -305,6 +307,162 @@ img {
   }
 }
 
+/* ===================================
+   SEARCH MODAL
+=================================== */
+
+.search-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: $space-10 $space-4;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // @include responsive(md) {
+  //   align-items: center;
+  // }
+}
+
+/* overlay */
+
+.search-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+}
+
+/* ===================================
+   SEARCH CONTAINER
+=================================== */
+
+.search-container {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  margin: 120px auto;
+  background: $white-color;
+  border-radius: 14px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  transform: translateY(-30px);
+  transition: all 0.35s ease;
+  padding: $space-16 $space-4 $space-4;
+
+  @include responsive(md) {
+    padding: $space-20 $space-6 $space-6;
+  }
+}
+
+.search-modal.active .search-container {
+  transform: translateY(0);
+}
+
+/* ===================================
+   SEARCH BOX
+=================================== */
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+
+  @include responsive(sm) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* ===================================
+   INPUT
+=================================== */
+
+.search-input {
+  flex: 1;
+  width: 100%;
+
+  padding: 14px 18px;
+
+  font-size: 14px;
+  border-radius: 8px;
+
+  border: 1px solid $border-color;
+  outline: none;
+
+  transition: border 0.2s ease;
+
+  &:focus {
+    border-color: $primary-color;
+  }
+
+  @include responsive(md) {
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+}
+
+/* ===================================
+   BUTTON
+=================================== */
+
+.search-submit {
+  background: $primary-color;
+  color: $black-color;
+
+  padding: 14px 22px;
+
+  border-radius: 8px;
+  border: none;
+  text-transform: uppercase;
+
+  font-weight: $font-weight-semibold;
+  font-family: $font-family-clash-display-semibold;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  @include responsive(sm) {
+    padding: 16px 26px;
+  }
+}
+
+/* ===================================
+   CLOSE BUTTON
+=================================== */
+
+.search-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  font-size: 20px;
+  line-height: 1;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @include responsive(md) {
+    font-size: 22px;
+    top: 16px;
+    right: 16px;
+  }
+}
+
 /* =========================
    HERO SECTION
 ========================= */
@@ -340,12 +498,15 @@ img {
     padding: $space-8 $space-6;
     @include flex-column;
     justify-content: center;
-    order: 2;
-    margin-top: $space-32;
+    width: 100%;
+    margin-top: $space-10;
+    @include responsive(md) {
+      margin-top: $space-12;
+      width: 80%;
+    }
 
     @include responsive(lg) {
-      // padding: $space-12;
-      order: 1;
+      margin-top: $space-16;
     }
 
     .hero-tagline-container {
@@ -353,9 +514,9 @@ img {
       display: flex;
       justify-content: right;
 
-      @include responsive(2xl) {
-        margin-left: 4rem;
-      }
+      // @include responsive(2xl) {
+      //   margin-left: 4rem;
+      // }
 
       .hero-tagline-bg {
         width: 49px;
@@ -365,10 +526,9 @@ img {
         margin: $space-2 0;
       }
       .hero-tagline {
-        // font-family: "Clash Display Semibold";
+        font-family: $font-family-clash-display-semibold;
         font-size: $font-size-xs;
         font-weight: $font-weight-semibold;
-        letter-spacing: 0.15em;
         text-transform: uppercase;
         color: $black-color;
         margin-bottom: $space-6;
@@ -387,81 +547,47 @@ img {
     }
 
     .hero-title {
-      // font-family: "Clash Display Semibold";
       font-size: $font-size-3xl;
       font-weight: $font-weight-bold;
+      font-family: $font-family-clash-display-semibold;
       text-transform: uppercase;
-      line-height: 0.9;
+      line-height: 0.8;
+      @include flex-column;
+      align-items: flex-start;
       color: $black-color;
-      margin-bottom: $space-4;
-
       @include responsive(sm) {
         font-size: $font-size-4xl;
       }
 
       @include responsive(md) {
         font-size: $font-size-8xl;
+        padding-left: $space-16;
       }
 
       @include responsive(lg) {
         font-size: $font-size-9xl;
+        padding-left: $space-24;
       }
       @include responsive(xl) {
         font-size: $font-size-10xl;
       }
 
       .highlight {
-        background-color: $primary-color;
-        position: relative;
         display: inline-block;
-        padding: $space-2;
-        letter-spacing: 5.4px;
-        font-size: $font-size-4xl;
+        background-color: $primary-color;
+        padding: $space-2 $space-3;
         font-weight: $font-weight-semibold;
+        letter-spacing: 5.4px;
+        line-height: 1;
+        font-size: $font-size-lg;
         @include responsive(md) {
           font-size: $font-size-5xl;
         }
         @include responsive(lg) {
           font-size: 55.88px;
         }
-        // &::after {
-        //   content: "";
-        //   position: absolute;
-        //   bottom: 5px;
-        //   left: 0;
-        //   width: 100%;
-        //   height: 12px;
-        //   background-color: $primary-color;
-        //   opacity: 0.3;
-        //   z-index: -1;
-        // }
       }
     }
-
-    .hero-subtitle {
-      font-size: $font-size-lg;
-      font-weight: $font-weight-medium;
-      color: $black-color;
-      margin-bottom: $space-8;
-    }
-  }
-
-  .hero-image {
-    position: relative;
-    order: 1;
-    min-height: 400px;
-
-    @include responsive(lg) {
-      order: 2;
-      min-height: auto;
-    }
-
-    // img {
-    //   width: 100%;
-    //   height: 100%;
-    //   object-fit: cover;
-    //   object-position: center top;
-    // }
   }
 }
 
@@ -491,14 +617,18 @@ img {
   }
 
   .section-title {
-      font-family: $font-family-clash-display-semibold;
+    font-family: $font-family-clash-display-semibold;
 
-    font-size: $font-size-3xl;
+    font-size: $font-size-2xl;
     font-weight: $font-weight-semibold;
     text-transform: uppercase;
     color: $black-color;
     text-align: center;
     width: 100%;
+
+    @include responsive(sm) {
+      font-size: $font-size-3xl;
+    }
 
     @include responsive(md) {
       font-size: $font-size-4xl;
@@ -714,7 +844,7 @@ img {
   .banner-container {
     @include container(1400px);
     display: grid;
-    height: 100%;
+    height: 300px;
     grid-template-columns: 1fr 1fr;
     @include responsive(sm) {
       min-height: 426px;

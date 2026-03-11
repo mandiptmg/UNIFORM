@@ -1136,6 +1136,7 @@ img {
   background-color: transparent;
 }
 .jacket-collection .products-grid .product-card .product-image {
+  padding: 0;
   background-color: transparent;
 }
 .jacket-collection .collection-cta {

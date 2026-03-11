@@ -245,6 +245,21 @@ img {
         @include size(20px);
       }
     }
+
+    .wishlist-btn{
+      position: relative;
+       .icon-btn-dot{
+        position: absolute;
+        top: 14px;
+        right: 10px;
+        border-radius: $radius-full;
+      @include size(5px);
+      background-color: $primary-color;
+
+    }
+    }
+
+   
   }
 }
 
@@ -752,7 +767,7 @@ img {
     padding: $space-4;
     text-align: left;
     width: 100%;
-    margin-left: 1.75rem;
+    padding-left: 1.75rem;
 
     .product-name {
       font-size: $font-size-base;

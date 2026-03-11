@@ -281,6 +281,18 @@ img {
   width: 20px;
   height: 20px;
 }
+.navbar .nav-right .wishlist-btn {
+  position: relative;
+}
+.navbar .nav-right .wishlist-btn .icon-btn-dot {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  border-radius: 9999px;
+  width: 5px;
+  height: 5px;
+  background-color: #0dffa3;
+}
 
 /* Mobile Menu */
 .mobile-menu {
@@ -776,7 +788,7 @@ img {
   padding: 1rem;
   text-align: left;
   width: 100%;
-  margin-left: 1.75rem;
+  padding-left: 1.75rem;
 }
 .product-card .product-info .product-name {
   font-size: 1rem;
